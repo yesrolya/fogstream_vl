@@ -14,7 +14,7 @@ try:
     print('Value: ', lst[max_index], '\nIndex: ', max_index)
 
 except ValueError:
-    print('Could not convert string in list to float')
+    print('Could not convert string in list to float/ a lot of spaces')
 except IndexError:
     print('List is empty')
 except TypeError:
