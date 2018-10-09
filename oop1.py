@@ -21,8 +21,8 @@ class Fraction:
                 a = a % b
             else:
                 b = b % a
-        self.a = self.a / (a + b)
-        self.b = self.b / (a + b)
+        self.a = int(self.a / (a + b))
+        self.b = int(self.b / (a + b))
         return self
 
     def compare(self, x):
@@ -70,7 +70,7 @@ class Fraction:
                 b2 = b2 % b1
         nod = b1 + b2
 
-        ret = Fraction((self.a * (b/nod)) + (mn * a * (self.b/nod)), self.b / nod * b)
+        ret = Fraction(int((self.a * (b/nod)) + (mn * a * (self.b/nod))), int(self.b / nod * b))
         return ret.reduct()
 
     def multiply(self, num):
@@ -82,11 +82,11 @@ class Fraction:
         elif type(num) is int:
             b = 1
             a = num
-        ret = Fraction(self.a * a, self.b * b)
+        ret = Fraction(int(self.a * a), int(self.b * b))
         return ret.reduct()
 
     def print(self):
-        print(self.a, '/', self.b)
+        print(int(self.a), '/', int(self.b))
         return
 
 new_num = Fraction(1, 2)
